@@ -4,12 +4,12 @@ FROM python:3.7
 WORKDIR /webapp-flask
 
 # Install app dependencies
-COPY src/requirements.txt ./
+COPY ./requirements.txt src
 
 RUN pip install -r requirements.txt
 
 # Bundle app source
-COPY src /webapp-flask
+COPY  ./webapp-flask
 
 EXPOSE 5000
 CMD [ "python", "helloworldpython.py" ]
