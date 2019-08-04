@@ -1,19 +1,15 @@
-FROM ubuntu:16.04
+FROM python:3.7
 
-MAINTANER Your Name "archana.nagaraj@gmail.com"
+# Create app directory
+WORKDIR /webapp-flask
 
-RUN apt-get update -y && \
-    apt-get install -y python-pip python-dev
-
-# We copy just the requirements.txt first to leverage Docker cache
-COPY ./requirements.txt /hellopythonworld/requirements.txt
-
-WORKDIR /hellopythonworld
+# Install app dependencies
+COPY src/requirements.txt ./
 
 RUN pip install -r requirements.txt
 
-COPY . /hellopythonworld
+# Bundle app source
+COPY src /webapp-flask
 
-ENTRYPOINT [ "python" ]
-
-CMD [ "hellopythonworld.py" ]
+EXPOSE 5000
+CMD [ "python", "helloworldpython.py" ]
