@@ -18,3 +18,4 @@ jobs:
       - run: echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin    
       - run: docker push "$DOCKER_IMAGE_NAME":latestsample # push the docker image to hub
       - run: docker run -d -p 5000:5000 DOCKER_IMAGE_NAME:latestsample hellopythonworld app.py
+      - run: curl http://localhost:5000
