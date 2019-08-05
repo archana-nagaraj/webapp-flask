@@ -1,5 +1,5 @@
 web:
-    build: ./src
+    build: /webapp-flask
     ports:
         - "5000:5000"
     volumes:
