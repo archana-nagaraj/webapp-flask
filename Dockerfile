@@ -4,6 +4,6 @@ FROM python:3.7
 WORKDIR /webapp-flask
 # Bundle app source
 COPY  src ./src
-RUN pip install -r requirements.txt
+RUN pip install -r ./src/requirements.txt
 EXPOSE 5000
 CMD [ "python", "./src/helloworldpython.py" ]
