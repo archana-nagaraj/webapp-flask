@@ -6,4 +6,4 @@ WORKDIR /webapp-flask
 COPY  src ./src
 RUN pip install -r ./src/requirements.txt
 EXPOSE 5000
-CMD [ "python", "hellopythonworld.py" ]
+CMD [ "python", "/src/hellopythonworld.py" ]
