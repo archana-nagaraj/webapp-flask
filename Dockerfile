@@ -5,6 +5,6 @@ WORKDIR /webapp-flask
 # Bundle app source
 COPY  src ./src
 RUN pip install -r ./src/requirements.txt
-EXPOSE 5050
+EXPOSE 5000
 ENTRYPOINT [ "python" ]
 CMD [ "./src/hellopythonworld.py" ]
