@@ -2,14 +2,8 @@ FROM python:3.7
 
 # Create app directory
 WORKDIR /webapp-flask
-
-# Install app dependencies
-COPY ./requirements.txt /src
-
-RUN pip install -r requirements.txt
-
 # Bundle app source
-COPY  ./webapp-flask
-
+COPY  src ./src
+RUN pip install -r requirements.txt
 EXPOSE 5000
-CMD [ "python", "helloworldpython.py" ]
+CMD [ "python", "./src/helloworldpython.py" ]
